@@ -57,6 +57,6 @@ public class Problem_Brix {
         4
         0 0 0 0
         0
-         */
+        */
     }
 }
