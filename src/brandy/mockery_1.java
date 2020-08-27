@@ -1,9 +1,13 @@
-package Test;
+package brandy;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.StringTokenizer;
 
-public class Main {
+public class mockery_1 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -20,7 +24,7 @@ public class Main {
         K = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(input2, " ");
-        while(st.hasMoreTokens()) {
+        while (st.hasMoreTokens()) {
             list.add(Integer.parseInt(st.nextToken()));
         }
 
@@ -28,8 +32,8 @@ public class Main {
 
         int a = list.get(0);
         for (int i = 1; i < list.size(); i = i + K - 1) {
-            for(int j = i; j < i + K - 1; j++) {
-                if(j == list.size()) {
+            for (int j = i; j < i + K - 1; j++) {
+                if (j == list.size()) {
                     break;
                 }
                 list.set(j, a);
