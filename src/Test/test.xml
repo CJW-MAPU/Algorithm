@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<myaddressbook>
+    <myperson>
+        <name asd="qwe">최재웅</name>
+        <tel>010-1234-1234</tel>
+        <address>대전</address>
+    </myperson>
+    <myperson>
+        <name>최재웅123</name>
+        <tel>010-1234-1234</tel>
+        <address>대전</address>
+    </myperson>
+</myaddressbook>

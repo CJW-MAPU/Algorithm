@@ -15,7 +15,6 @@ public class Problem_1541 {
         String str = br.readLine();
         StringTokenizer st = new StringTokenizer(str, "+-", true);
 
-        int size = str.length();
         List<Integer> operand = new ArrayList<Integer>();
         List<String> operator = new ArrayList<String>();
 

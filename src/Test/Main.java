@@ -1,42 +1,18 @@
 package Test;
 
-import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) {
+        long time = System.currentTimeMillis();
+        SimpleDateFormat dayTime = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+        String str = dayTime.format(new Date((time)));
+        System.out.println(str);
 
-        int N, K;
-        int count = 0;
-        StringTokenizer st;
-        List<Integer> list = new ArrayList<>();
+        System.out.println(time);
+        System.out.println(((time >> 0x10) ^ (time >> 0x08)) + ((time >> 0x18) ^ (time)));
 
-        String input1 = br.readLine();
-        String input2 = br.readLine();
-
-        st = new StringTokenizer(input1, " ");
-        N = Integer.parseInt(st.nextToken());
-        K = Integer.parseInt(st.nextToken());
-
-        st = new StringTokenizer(input2, " ");
-        while(st.hasMoreTokens()) {
-            list.add(Integer.parseInt(st.nextToken()));
-        }
-
-        Collections.sort(list);
-
-        int a = list.get(0);
-        for (int i = 1; i < list.size(); i = i + K - 1) {
-            for(int j = i; j < i + K - 1; j++) {
-                if(j == list.size()) {
-                    break;
-                }
-                list.set(j, a);
-            }
-            count++;
-        }
-
-        System.out.println(count);
+        
     }
 }
