@@ -1,6 +1,7 @@
 package study;
 
-public class quickSort {public static void main(String[] args) {
+public class quickSort {
+    public static void main(String[] args) {
     int[] A = { 26, 14, 100, 95, 22, 17, 48, 20, 50, 90 };
 
     for (int i = 0; i < A.length; i++) {
