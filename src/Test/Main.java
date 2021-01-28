@@ -1,18 +1,31 @@
 package Test;
 
-import java.text.SimpleDateFormat;
+import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        long time = System.currentTimeMillis();
-        SimpleDateFormat dayTime = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
-        String str = dayTime.format(new Date((time)));
-        System.out.println(str);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        System.out.println(time);
-        System.out.println(((time >> 0x10) ^ (time >> 0x08)) + ((time >> 0x18) ^ (time)));
+        int T = Integer.parseInt(br.readLine());
 
-        
+        List<Integer> N = new ArrayList<>();
+        List<Integer> M = new ArrayList<>();
+
+        for (int i = 0; i < T; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            N.add(Integer.parseInt(st.nextToken()));
+            M.add(Integer.parseInt(st.nextToken()));
+        }
+
+        for (int i = 0; i < T; i++) {
+            bw.write(N.get(i) + " " + M.get(i) + '\n');
+        }
+
+        bw.flush();
+        bw.close();
     }
+
+
 }
