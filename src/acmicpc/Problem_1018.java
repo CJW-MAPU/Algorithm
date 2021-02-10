@@ -30,7 +30,11 @@ public class Problem_1018 {
                 }
             }
         }
-        System.out.println(min);
+
+        bw.write(min);
+
+        bw.flush();
+        bw.close();
     }
 
     private static int compareBoard(String[] inputBoard, int x, int y) {
