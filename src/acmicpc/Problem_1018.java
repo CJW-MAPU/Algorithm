@@ -1,8 +1,6 @@
 package acmicpc;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.StringTokenizer;
 
 public class Problem_1018 {
@@ -15,26 +13,52 @@ public class Problem_1018 {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        List<String> inputs = new ArrayList<>();
+        String[] inputs = new String[N];
 
         for (int i = 0; i < N; i++) {
-            inputs.add(br.readLine());
+            inputs[i] = br.readLine();
         }
 
-        int countW = 0;
-        int countB = 0;
+        int min = Integer.MAX_VALUE;
 
-        // 홀수
-        if ((N * M) % 2 == 1) {
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < M; j++) {
+        for (int i = 0; i < N - 7; i++) {
+            for (int j = 0; j < M - 7; j++) {
+                int count = compareBoard(inputs, i, j);
 
+                if (min > count) {
+                    min = count;
                 }
             }
         }
-        // 짝수
-        else {
+        System.out.println(min);
+    }
 
+    private static int compareBoard(String[] inputBoard, int x, int y) {
+        String[] chessBoard = {
+                "BWBWBWBW",
+                "WBWBWBWB",
+                "BWBWBWBW",
+                "WBWBWBWB",
+                "BWBWBWBW",
+                "WBWBWBWB",
+                "BWBWBWBW",
+                "WBWBWBWB"
+        };
+
+        int count = 0;
+
+        for (int i = x; i < x + 8; i++) {
+            for (int j = y; j < y + 8; j++) {
+                if (inputBoard[i].charAt(j) != chessBoard[i - x].charAt(j - y)) {
+                    count++;
+                }
+            }
         }
+
+        if (count > 32) {
+            return 64 - count;
+        }
+
+        return count;
     }
 }
