@@ -1,10 +1,7 @@
 package TICT;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class page92_Refactor {
     public static void main(String[] args) throws IOException {
