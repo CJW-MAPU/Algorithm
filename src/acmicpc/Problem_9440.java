@@ -52,7 +52,7 @@ public class Problem_9440 {
 
             StringBuilder left = new StringBuilder();
             StringBuilder right = new StringBuilder();
-
+ 
             for (int i = 0; i < datas.size(); i++) {
                 if (i % 2 == 1) {
                     left.append(datas.get(i));
