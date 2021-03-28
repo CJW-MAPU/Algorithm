@@ -32,10 +32,26 @@ public class Problem_1063 {
                         stone.move(move.get(i));
                     }
                 } else {
-                    
+                    king.move(move.get(i));
+
+                    if (king.toString().equals(stone.toString())) {
+                        king.setX(-king.getX());
+                        king.setY(-king.getY());
+                        king.move(move.get(i));
+                        king.setX(-king.getX());
+                        king.setY(-king.getY());
+                    }
                 }
             }
         }
+
+        /*for (int i = 0; i < N; i++) {
+            king.move(move.get(i));
+
+            if (king.toString().equals(stone.toString())) {
+                stone.move(move.get(i));
+            }
+        }*/
 
         bw.write(king.toString());
         bw.newLine();
@@ -55,6 +71,22 @@ class ChessPosition {
         this.y = input.toCharArray()[1] - 48;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     @Override
     public String toString() {
         return (char)(x + 64) + "" + y;
@@ -63,41 +95,25 @@ class ChessPosition {
 
     public void move(String input) {
         if (input.equals("R")) {
-            if (x < 8) {
-                x++;
-            }
+            x++;
         } else if (input.equals("L")) {
-            if (x > 1) {
-                x--;
-            }
+            x--;
         } else if (input.equals("T")) {
-            if (y < 8) {
-                y++;
-            }
+            y++;
         } else if (input.equals("B")) {
-            if (y > 1) {
-                y--;
-            }
+            y--;
         } else if (input.equals("RT")) {
-            if (x < 8 && y < 8) {
-                x++;
-                y++;
-            }
+            x++;
+            y++;
         } else if (input.equals("RB")) {
-            if (x < 8 && y > 1) {
-                x++;
-                y--;
-            }
+            x++;
+            y--;
         } else if (input.equals("LT")) {
-            if (x > 1 && y < 8) {
-                x--;
-                y++;
-            }
+            x--;
+            y++;
         } else if (input.equals("LB")) {
-            if (x > 1 && y > 1) {
-                x--;
-                y--;
-            }
+            x--;
+            y--;
         }
     }
 
